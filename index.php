@@ -14,6 +14,9 @@ $leftcolgrid 	= $this->params->get('columnWidth', 3);
 
 $rightcolgrid	= $this->params->get('columnWidth', 3);
 
+$ngappname   	= $this->params->get('ngappname', '');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +55,7 @@ if ($this->countModules('right') == 0):?>
 
 </head>
 
-<body>
+<body <?php echo !empty($ngappname) ? 'ng-app="' . $ngappname .  '"' : ''; ?>>
 
 <!--top-->
 <div id="wrap">
@@ -255,6 +258,13 @@ if ($this->countModules('right') == 0):?>
 <!-- JS -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-cookies.min.js"></script>
+
 <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bootstrap.min.js"></script> 
 <!--<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/application.js"></script> -->
 <!--<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/prettify.js"></script> -->

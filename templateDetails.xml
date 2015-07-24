@@ -51,11 +51,17 @@
 		<position>debug</position>
 	</positions>
 	
-	<config><!-- no need to change -->
+	<config>
 		<fields name="params">
 
 			<fieldset name="basic">
 
+
+                <field name="ngappname" 
+                       type="text"
+                       default=""
+                       label="Angular App Name"
+                       description="The app name that will be used by the angular app" />
 				<field name="columnWidth" type="list" default="3" label="Column Width" description="Choose a width for your left and right columns">
 					<option value="2">2</option>
 					<option value="3">3</option>
